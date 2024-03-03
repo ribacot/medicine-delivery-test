@@ -2,25 +2,25 @@
 
 import { useEffect, useState } from "react";
 
-export default function ListCardsItems({ el, idx, cartArr, setCartArr }) {
+export default function ListCardsItems({ el,  cartArr, setCartArr }) {
 	const [isDisebled, setIsDisebled] = useState(false);
 
 	useEffect(() => {
-		setIsDisebled(cartArr.some((el) => el.id === idx));
+		setIsDisebled(cartArr.some((cartEl) => cartEl.id === el.id));
 	}, [cartArr]);
 
 	const handleClick = () => {
 		if (isDisebled) {
-			setCartArr(cartArr.filter((item) => item.id !== idx));
+			setCartArr(cartArr.filter((item) => item.id !== el.id));
 		} else {
-			setCartArr([...cartArr, {title:el, id: idx }]);
+			setCartArr([...cartArr, {title:el.title, id: el.id}]);
 			console.log(cartArr);
 		}
 	};
 
 	return (
 		<li className="relative w-[250px] h-[200px] border-solid border-red-500 border-[1px] rounded-xl">
-			{el}
+      {el.title+" "+el.id} 
 			<button
 				type="button"
 				onClick={handleClick}

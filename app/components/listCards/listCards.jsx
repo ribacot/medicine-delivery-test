@@ -17,17 +17,14 @@ export default function ListCards({ cardArr }) {
 
 	return (
 		<ul className="flex w-full flex-wrap gap-2 overflow-y-auto">
-			{card.length
-				? card.map((el, idx) => (
-						<ListCardsItems
-							key={idx}
-							el={el}
-							idx={idx}
-							setCartArr={setCartArr}
-							cartArr={cartArr}
-						/>
-				  ))
-				: null}
+			{card.map((el) => (
+				<ListCardsItems
+					key={el.id}
+					el={el}
+					setCartArr={setCartArr}
+					cartArr={cartArr}
+				/>
+			))}
 		</ul>
 	);
 }
