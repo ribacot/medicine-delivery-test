@@ -9,7 +9,6 @@ export default function ListCards({ cardArr }) {
 			[]
 	);
 	const card = cardArr?.length ? cardArr : cartArr;
-	console.log(card);
 
 	useEffect(() => {
 		localStorage.setItem("cartArr", JSON.stringify(cartArr));
@@ -17,14 +16,14 @@ export default function ListCards({ cardArr }) {
 
 	return (
 		<ul className="flex w-full flex-wrap gap-2 overflow-y-auto">
-			{card.map((el) => (
+			{card.length?card.map((el) => (
 				<ListCardsItems
 					key={el.id}
 					el={el}
 					setCartArr={setCartArr}
 					cartArr={cartArr}
-				/>
-			))}
+				/> 
+			)):null}
 		</ul>
 	);
 }

@@ -6,7 +6,7 @@ export default function Input({
 	placeholder = "",
 	label = "",
 	type = "text",
-	className,
+	classStyle="",
 }) {
 	return (
 		<div >
@@ -21,7 +21,7 @@ export default function Input({
 					type={type}
 					placeholder={placeholder}
 					{...register(id)}
-					className={`w-[100%] h-[48px] pl-[18px] bg-input placeholder:text-darck  outline-darkBlue outline-[2px] bprder-[#8A8A8933] ${className}`}
+					className={`w-[100%] h-[48px] pl-[18px] bg-input placeholder:text-darck  outline-darkBlue outline-[2px] bprder-[#8A8A8933] ${classStyle}`}
 				/>
 			</div>
 		</div>

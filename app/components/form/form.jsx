@@ -33,9 +33,6 @@ export default function Form() {
 
 	const onSubmit = (data) => {
 		const { name, email, phone, adress } = data;
-		// if (!model & !price & !mileadgFrom & !mileadgTo) {
-		// 	return;
-		// }
 
 		reset();
 	};
@@ -54,30 +51,30 @@ export default function Form() {
 					label="Name"
 					id="name"
 					placeholder="Enter the name"
-					className="rounded-[10px] border-[1px]"
+					classStyle="rounded-[10px] border-[1px]"
 				/>
 				<Input
 					register={register}
 					label="Email"
 					id="email"
 					placeholder="Enter the email"
-					className="rounded-[10px] border-[1px]"
+					classStyle="rounded-[10px] border-[1px]"
 				/>
 				<Input
 					register={register}
 					label="Adress"
 					id="adress"
 					placeholder="Enter the adress"
-					className="rounded-[10px] border-[1px]"
+					classStyle="rounded-[10px] border-[1px]"
 				/>
 				<Input
 					register={register}
 					label="Phone"
 					id="phone"
 					placeholder="Enter the phone"
-					className="rounded-[10px] border-[1px]"
+					classStyle="rounded-[10px] border-[1px]"
 				/>
-				<button type="submit" clasName="w-fit px-[44px] py-[10px] ">
+				<button type="submit" className="bg-green-200 text-red-500 rounded-xl" >
 					Submit
 				</button>
 			</form>

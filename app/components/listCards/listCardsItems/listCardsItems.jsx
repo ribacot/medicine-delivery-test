@@ -12,9 +12,9 @@ export default function ListCardsItems({ el,  cartArr, setCartArr }) {
 	const handleClick = () => {
 		if (isDisebled) {
 			setCartArr(cartArr.filter((item) => item.id !== el.id));
+
 		} else {
 			setCartArr([...cartArr, {title:el.title, id: el.id}]);
-			console.log(cartArr);
 		}
 	};
 
