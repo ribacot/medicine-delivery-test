@@ -20,7 +20,7 @@ export default function ListCards({ cardArr }) {
 	}, [cartArr]);
 
 	return (
-		<ul className="flex w-full flex-wrap gap-2 overflow-y-auto">
+		<ul className="grid md:grid-cols-2 lg:grid-cols-3 w-full  gap-2 justify-center overflow-y-auto">
 			{isClient?card.map((el) => (
 				<ListCardsItems
 					key={el.id}

@@ -19,7 +19,7 @@ export default function ListCardsItems({ el,  cartArr, setCartArr }) {
 	};
 
 	return (
-		<li className="relative w-[250px] h-[200px] border-solid border-red-500 border-[1px] rounded-xl">
+		<li className="relative min-w-[250px] min-h-[200px] border-solid border-red-500 border-[1px] rounded-xl">
       {el.title+" "+el.id} 
 			<button
 				type="button"
