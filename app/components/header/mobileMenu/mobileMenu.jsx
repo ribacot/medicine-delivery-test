@@ -1,5 +1,6 @@
 import { Dialog } from "@headlessui/react";
 import Navigation from "../navigation/navigation";
+import { Container } from "../../ui/container/container";
 
 export default function MobileMenu({onClick, isOpen, links}) {
 	return (
@@ -27,7 +28,7 @@ export default function MobileMenu({onClick, isOpen, links}) {
 				</div>
 				<div className="mt-10 flow-root">
 					<div className="-my-6 divide-y divide-gray-500/10">
-						<Navigation links={links} className="space-y-2 py-6 flex flex-col gap-6" />
+						<Navigation links={links} className="space-y-2 py-6 flex flex-col gap-6" onClick={onClick} />
 					</div>
 				</div>
 			</Dialog.Panel>

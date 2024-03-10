@@ -33,3 +33,24 @@ main{
   height: calc(100vh - 64px);
   padding-bottom: 40px;
 }
+
+h1.auth{
+  @apply
+  text-center text-red-500 text-4xl font-bold
+}
+
+input.formAuth{
+  @apply
+  w-full
+  px-4
+  py-2
+  text-gray-700
+  border
+  border-gray-300
+  rounded-xl
+  focus:outline-none
+  focus:ring-1
+  focus:ring-offset-0
+  focus:border-blue-300
+  hover:bg-slate-200
+}
