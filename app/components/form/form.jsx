@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 // import Button from "../Ui/Button";
 
-import Input from "./input";
+import Input from "../ui/input";
 
 const nameInput = {
 	id: "name",
@@ -38,7 +38,6 @@ export default function Form() {
 	};
 
 	return (
-		<div className="flex justify-center pb-[30px]">
 			<form
 				action="submit"
 				onSubmit={handleSubmit(onSubmit)}
@@ -74,10 +73,9 @@ export default function Form() {
 					placeholder="Enter the phone"
 					classStyle="rounded-[10px] border-[1px]"
 				/>
-				<button type="submit" className="bg-green-200 text-red-500 rounded-xl" >
+				<button type="submit" className="bg-green-500 text-white rounded-lg py-1" >
 					Submit
 				</button>
 			</form>
-		</div>
 	);
 }

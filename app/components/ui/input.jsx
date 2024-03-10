@@ -1,4 +1,4 @@
-import "./form.css";
+import "../form/form.css";
 
 export default function Input({
 	register,
