@@ -1,18 +1,51 @@
+"use client";
+
 import Image from "next/image";
 import { Container } from "../components/ui/container/container";
+import { useState } from "react";
 
 export default function (second) {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const hendlSubmit = (e) => {
+		e.preventDefault();
+
+		fetch("/api/register", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				email: email,
+				password: password,
+			}),
+		});
+		setEmail("");
+		setPassword("");
+	};
 	return (
 		<section className="mt-8">
 			<Container className="text-center">
 				<h1 className="auth">Register</h1>
-				<form className="flex flex-col gap-4 mt-7 max-w-sm mx-auto">
-					<input id="email" type="email" placeholder="email" className="formAuth" />
+				<form
+					className="flex flex-col gap-4 mt-7 max-w-sm mx-auto"
+					onSubmit={hendlSubmit}
+				>
+					<input
+						id="email"
+						type="email"
+						placeholder="email"
+						className="formAuth"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+					/>
 					<input
 						id="password"
 						type="password"
 						placeholder="password"
 						className="formAuth"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
 					/>
 					<button
 						type="submit"
