@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Container } from "../components/ui/container/container";
 import { useState } from "react";
 
-export default function (second) {
+export default function RegisterPage (second) {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const hendlSubmit = (e) => {

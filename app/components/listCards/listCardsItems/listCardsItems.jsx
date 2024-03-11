@@ -7,7 +7,7 @@ export default function ListCardsItems({ el,  cartArr, setCartArr }) {
 
 	useEffect(() => {
 		setIsDisebled(cartArr.some((cartEl) => cartEl.id === el.id));
-	}, [cartArr]);
+	}, [cartArr,el.id]);
 
 	const handleClick = () => {
 		if (isDisebled) {
