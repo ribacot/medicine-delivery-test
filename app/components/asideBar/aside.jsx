@@ -1,13 +1,25 @@
-export default function AsideBar() {
-	const shops = ["Farm", "ALL-24", "ALL-25", "ALL-26", "ALL-27"];
+"use client";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
+export default  function AsideBar() {
+	const [shops, setShops] = useState([]);
+
+	useEffect(() => {
+		axios("api/getAllCompanies", {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		}).then((res) => setShops(res.data));
+	}, []);
 	return (
-		<aside className="pt-[40px] px-[20px] h-[100%] w-min border-solid border-[2px] border-black rounded-xl">
+		<aside className="pt-[40px] px-[10px] h-[100%] w-[300px] border-solid border-[2px] border-black rounded-xl overflow-x-hidden text-center ">
 			<ul className=" flex  flex-col gap-3">
-				{shops.map((shop,idx) => (
-					<li key={idx}>
+				{shops.map(({_id,permalink}) => (
+					<li key={_id}>
 						<button type="button" className="w-[150px] h-[50px] bg-red-400 rounded-xl">
-							{shop} 
+							{permalink} 
 						</button>
 					</li>
 				))}
